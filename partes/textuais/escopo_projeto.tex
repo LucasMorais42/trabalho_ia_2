@@ -1,0 +1,129 @@
+
+\chapter{Escopo do Projeto}
+
+
+O projeto se concentrará nas funcionalidades principais para permitir que as denúncias sejam efetuadas corretamente e no outro lado, deverá permitir para os usuários administradores da prefeitura realizar a gestão das ocorrências e visualização mais ampla das mesmas.
+
+
+\section{Funcionalidades do Sistema}
+
+\subsection{Funcionalidades do Usuário}
+\subsubsection{Realizar cadastro no aplicativo}
+O sistema deve permitir o cadastro de novos usuários. Para realizar o cadastro, o usuário deverá informar os seguintes dados obrigatórios: nome, e-mail, telefone, CPF e senha. O sistema deverá validar os dados informados, garantindo que o CPF e e-mail não estejam previamente cadastrados. Após o preenchimento dos dados, o sistema deverá enviar um código de verificação para o e-mail informado. O usuário deverá inserir o código recebido para confirmar o cadastro.
+
+
+
+\subsubsection{Realizar login no aplicativo}
+
+O usuário pode efetuar o login em sua conta no aplicativo, sendo necessário informar o seu CPF e senha cadastradas. Caso as informações estejam corretas o sistema irá informar uma mensagem de login bem sucedido, caso alguma das credenciais esteja incorreta o sistema irá informar uma mensagem de erro.
+
+\subsubsection{Redefinir sua senha}
+
+O sistema deve permitir que o usuário redefina sua senha em caso de alguma necessidade. Para realizar a redefinição, o usuário deverá informar seu CPF. Após a validação do CPF informado, o sistema deverá enviar um e-mail para o endereço eletrônico associado ao usuário, contendo um link seguro para a criação de uma nova senha. O usuário deverá acessar o link dentro do prazo de validade estabelecido e informar a sua nova senha, atendendo aos critérios de aceite definidos pelo sistema.
+
+\subsubsection{Realizar logout do aplicativo}
+
+O sistema deve permitir que o usuário possa encerrar sua sessão a qualquer momento. Ao solicitar o encerramento da sessão, o sistema deve redirecionar o usuário para a tela de login.
+
+\subsubsection{Verificar os dados da sua conta}
+
+O sistema deve permitir que o usuário visualize suas informações. Ao acessar a funcionalidade "Meu Perfil", o sistema deverá exibir os seguintes dados do usuário: nome, CPF, telefone e e-mail. A senha não deve ser exibida
+
+\subsubsection{Atualizar os dados da sua conta}
+
+O sistema deve permitir que o usuário edite suas informações. Ao acessar a funcionalidade "Meu Perfil", o usuário poderá alterar seus dados, exceto o CPF. O sistema deve permitir a edição dos campos: nome, telefone, e-mail e senha. O sistema deverá validar os dados informados antes de salvar as alterações.
+
+\subsubsection{Registrar ocorrências no mapa através de um marcador}
+
+O sistema deverá permitir para os usuários posicionar um marcador no mapa e adicionar uma categoria do problema a ser denunciado, uma descrição, uma foto opcional e verificar se a localização demonstrada está correta, podendo ser mudado o endereço caso os dados de geolocalização apresentarem algo um erro.
+Os dados de geolocalização deverão ser filtrados automaticamente, puxando as informações como o logradouro, CEP e bairro.
+
+\subsubsection{Visualizar ocorrências no mapa durante o uso}
+
+O sistema deverá permitir aos usuários visualizar outras ocorrências no mapa, através de marcadores que fiquem visíveis de acordo com a proximidade do usuário. Além disso, caso o usuário clique em algum dos marcadores ele poderá visualizar com mais detalhes a descrição, categoria, data do envio, status da ocorrência (pendente, em andamento, concluído ou arquivado) e, caso possua, mostrar a foto do problema informado no marcador.
+
+\subsubsection{Visualizar todas ocorrências}
+
+O sistema deve permitir que o usuário visualize a lista de todas as ocorrências cadastradas. O sistema deverá exibir as ocorrências em formato de tabela ao acessar a opção "Ocorrências", permitindo sua consulta de forma organizada. A tabela deve apresentar, as seguintes informações: código, rua, categoria e status.
+
+\subsubsection{Filtrar ocorrências} 
+
+O sistema deve permitir que o usuário filtre as ocorrências por bairro, status ou por aquelas registradas por si próprio. O sistema deverá disponibilizar opções de filtro que permitam ao usuário visualizar as ocorrências existentes conforme os critérios selecionados.
+
+\subsubsection{Avaliar ocorrências no mapa através de sistema de “up e downvote”}
+
+O sistema deverá permitir que os usuários que utilizem o aplicativo ao abrir as ocorrências visíveis no mapa, que possam avaliar a ocorrência através de um sistema de “up e downvote”. Essa funcionalidade servirá para checar a veracidade das ocorrências.
+
+\subsubsection{Visualizar suas notificações}
+
+O sistema deve permitir que o usuário visualize suas notificações. O sistema deverá exibir uma lista de notificações relacionadas ao usuário, incluindo informações sobre atualizações de determinada ocorrência.
+
+\subsubsection{Visualizar uma ocorrência específica}
+
+O sistema deve permitir que o usuário visualize uma ocorrência em específico. O sistema deverá exibir todas as informações da ocorrência, sendo elas: código, categoria, data, status, rua, coordenadas e a foto, caso possua. Além disso, o sistema deverá permitir que o usuário realize opções de upvote ou downvote para indicar se a ocorrência já foi resolvida ou não.
+
+\subsection{Funcionalidades do Administrador}
+
+
+\subsubsection{Listar categorias de ocorrências}
+
+O sistema deve permitir que o administrador liste todas as categorias de ocorrência cadastradas, sendo mostrado o código da categoria, nome da categoria, descrição da categoria e seu status, podendo ser ativo ou inativo.
+
+\subsubsection{Cadastrar uma categoria de ocorrência}
+
+O sistema deverá permitir que o administrador cadastre novas categorias de ocorrências, sendo necessário informar a o nome e descrição da categoria.
+
+\subsubsection{Atualizar categoria de ocorrência}
+
+O sistema deve permitir que o administrador atualize uma categoria de ocorrência. O sistema deverá possibilitar a alteração das informações da categoria, sendo elas: nome, descrição e status.
+
+\subsubsection{Inativar categoria de ocorrência}
+
+O sistema deve permitir que o administrador inative uma categoria de ocorrência. O sistema deverá possibilitar a inativação de categorias, impedindo seu uso em novas ocorrências.
+
+\subsubsection{Listar todas as ocorrências}
+
+O sistema deve permitir que o administrador visualize a lista de todas as ocorrências cadastradas. O sistema deverá exibir as ocorrências em formato de lista ao clicar na opção "Ocorrências", permitindo sua consulta de forma organizada.
+
+\subsubsection{Verificar uma ocorrência}
+
+O sistema deve permitir que o administrador visualize uma ocorrência específica. O sistema deverá exibir todas as informações da ocorrência, possibilitando sua verificação detalhada.
+
+\subsubsection{Filtrar ocorrências}
+
+O sistema deverá permitir aos administradores que todas as ocorrências sejam listadas em um painel administrativo, podendo ser aplicados filtros por bairros, status atual, categorias de problemas, data de envio.
+
+\subsubsection{Gerenciamento de ocorrências}
+
+O sistema deverá permitir que os administradores possam atualizar as ocorrências, podendo atualizar seu status para em andamento, concluído ou arquivado.
+
+\subsection{Funcionalidades do Sistema}
+
+\subsubsection{Filtrar automaticamente os dados de localização do usuário}
+
+O sistema deve permitir o preenchimento automático da localização do usuário ao registrar uma ocorrência. Ao acessar a funcionalidade "Registrar Ocorrência", o sistema deverá solicitar permissão para acessar a localização do dispositivo. Caso a permissão seja concedida e a localização esteja ativa, o sistema deverá obter automaticamente as coordenadas do usuário e utilizá-las para preencher os dados de localização da ocorrência. Caso a localização não esteja disponível ou a permissão não seja concedida, o sistema deverá permitir o preenchimento manual das informações.
+
+\subsubsection{Notificações para os usuários}
+
+O sistema deverá notificar os usuários ao ter alguma atualização no status das ocorrências que ele efetuou. Essa notificação deverá ficar visível na aba superior do dispositivo e gerar um pequeno alarme sonoro.
+
+\subsubsection{Relatórios de ocorrências}
+
+O sistema deverá gerar relatórios de ocorrências de acordo com as categorias e status, apresentando-os em gráficos e também de forma textual.
+
+\section{EXCLUSÕES DO SISTEMA E PROPOSTA DE MELHORIA FUTURA}
+
+
+\subsection{Diferenciar acessos entre os administradores}
+
+O sistema não contará com uma diferenciação entre os administradores, no sentido em que o sistema não irá destinar as ocorrências para diferentes “departamentos” de acordo com a categoria do problema. Os administradores terão acesso a todas as ocorrências e poderão atualizar elas, indiferentemente da distinção da categoria do problema. 
+
+\subsection{Criação de rotas entre os marcadores}
+
+O sistema não irá contar com uma funcionalidade na qual os administradores poderão criar uma “rota de solução” selecionando vários marcadores, eles serão tratados como problemas individuais não podendo ter agrupamentos para planejar soluções sequenciais.
+
+\subsection{Integração com outros sistemas }
+
+O sistema não irá se comunicar com outros sistemas, salvo os casos de interligações com banco de dados e sistemas de armazenamento.
+
+

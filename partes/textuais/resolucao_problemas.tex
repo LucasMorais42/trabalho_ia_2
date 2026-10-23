@@ -1,0 +1,100 @@
+% ---
+% primeiro capitulo de Resultados
+% ---
+\chapter{RESOLUÇÃO DE PROBLEMAS}
+
+Os primeiros pesquisadores de IA precisaram encontrar mecanismos para resolver problemas cuja solução tinha alta complexidade apenas usando técnicas convencionais de programação, devido a limitações físicas de memoria RAM e capacidade de processamento. As técnicas convencionais de programação usando praticas determinísticas, isto e, usando condições previsíveis.
+
+Uma das principais técnicas adotadas para resolver problemas complexos para seres humanos e que não era possível a aplicação de técnicas convencionais foi o método da busca. Alguns dos principais exemplos de problemas que essa técnica visava resolver são: Quebra-Cabeças 3x3, Caixeiro Viajante, Calculo Integral Formal, Torre de Hanoi, Problemas de Rota Minima etc.
+
+\section{Espaço do Problema e Espaço de Solução} 
+As técnicas de busca em IA irão buscar as soluções possíveis em um espaço do problema, não em uma estrutura de dados pre-definida convencional que armazena todos os resultados. A estrategia utilizada nos algoritmos de busca visa encontrar um caminho saindo de um \textbf{estado\footnote{Um estado nada mais e do que um recorte do problema no momento atual, como por exemplo em um jogo de xadrez em que a cada movimento feito pelos jogadores o tabuleiro apresenta uma configuração única.} inicial} ate um \textbf{estado objetivo}, e esse processo de busca define o que chamamos de \textbf{espaço da solução}. 
+
+Ao contrario da programação convencional usando estruturas de dados no qual o espaço de problema ja existe, na solução por busca o espaço de problemas passa a existir e e gerado com o decorrer da execução do algoritmo. 
+
+Para definir os conceitos principais usaremos um dos exemplos mais comuns sobre esse topico, o problema de Arad-Bucareste, este problema em especifico consiste em saber a menor rota saindo de Arad e chegando em Bucareste. 
+
+
+
+Para definir um problema formalmente temos que ter os seguintes elementos:
+
+\begin{itemize}
+	\item \textbf{Estado inicial: } definir o estado de partida que sera avaliado por nossa Inteligencia Artificial. No nosso problema de exemplo: Arad;
+	\item \textbf{Ações: }As acoes são operações que podem ser feitas um estado atual. Podem haver varias ações. As acoes possuem pre-condições para serem executadas. No nosso exemplo uma ação sera sair de uma cidade e ir pra outra (como podem haver varias cidades atingíveis, temos várias ações).
+	\item \textbf{Transiçao: }As transiçoes definem qual sera o estado ao aplicar uma açao qualquer em um estado. No nosso exemplo uma transiçao definiria o resultado de aplicar a açao "ir para Zerind" no estado "Arad", como resultado temos "Zerind". 
+	\item  \textbf{Espaço de Estados: } O espaço de estados nada mais eh do que o conjunto de todos os estados acessiveis a partir do estado inicial. Esse espaço de estado eh definidio pelo espaço inicial, pelo conjunto de açoes e pelo conjunto de resultados. O espaço de estados pode ser visualizado como um grafo dirigido.
+	\item \textbf{Teste de Objetivo: }Este teste determina se o estado vigente e o nosso estado objetivo. No nosso exemplo seria simplesmente verificar se o estado atual e igual a Bucareste.
+	\item \textbf{Funçao custo de caminho: }O custo de caminho considera o tanto que foi gasto para chegar ate o estado vigente, considerando os passos anteriores. O custo de passo seria o custo ao adotar um açao $a$ qualquer em um estado $s$ e ir para um estado $s'$
+\end{itemize}
+
+
+\centering
+\begin{figure}[H]
+	\begin{tikzpicture}[
+		scale=1.5, % Ajusta o tamanho geral do grafo
+		every node/.style={draw, rectangle, fill=gray!50, inner sep=3.5pt}, % Vértices quadrados cinzas como na imagem
+		
+		edge label/.style={draw=none, fill=none, rectangle, inner sep=2pt, font=\small} % Estilo para os pesos
+		]
+		
+		% === VÉRTICES (CIDADES) ===
+		% Lado Esquerdo / Oeste
+		\node (Oradea) at (1.5, 6) {}; \node[draw=none, fill=none, right=3pt] at (Oradea) {Oradea};
+		\node (Zerind) at (0.8, 5) {}; \node[draw=none, fill=none, right=3pt] at (Zerind) {Zerind};
+		\node (Arad) at (0.5, 4) {}; \node[draw=none, fill=none, left=3pt] at (Arad) {Arad};
+		\node (Timisoara) at (0.5, 2.2) {}; \node[draw=none, fill=none, right=3pt] at (Timisoara) {Timisoara};
+		\node (Lugoj) at (1.7, 1.5) {}; \node[draw=none, fill=none, right=3pt] at (Lugoj) {Lugoj};
+		\node (Mehadia) at (1.7, 0.7) {}; \node[draw=none, fill=none, right=3pt] at (Mehadia) {Mehadia};
+		\node (Drobeta) at (1.7, 0) {}; \node[draw=none, fill=none, left=3pt] at (Drobeta) {Drobeta};
+		
+		% Centro
+		\node (Sibiu) at (3.2, 3.2) {}; \node[draw=none, fill=none, above right] at (Sibiu) {Sibiu};
+		\node (Rimnicu) at (3.7, 2.2) {}; \node[draw=none, fill=none, above right] at (Rimnicu) {Rimnicu Vilcea};
+		\node (Fagaras) at (5.3, 3.1) {}; \node[draw=none, fill=none, above=3pt] at (Fagaras) {Fagaras};
+		\node (Pitesti) at (5.3, 1.5) {}; \node[draw=none, fill=none, above=3pt] at (Pitesti) {Pitesti};
+		\node (Craiova) at (3.9, -0.2) {}; \node[draw=none, fill=none, below=3pt] at (Craiova) {Craiova};
+		
+		% Lado Direito / Leste
+		\node (Bucareste) at (6.8, 0.6) {}; \node[draw=none, fill=none, below right] at (Bucareste) {Bucareste};
+		\node (Giurgiu) at (6.4, -0.6) {}; \node[draw=none, fill=none, right=3pt] at (Giurgiu) {Giurgiu};
+		\node (Urziceni) at (8.0, 1) {}; \node[draw=none, fill=none, below=3pt] at (Urziceni) {Urziceni};
+		\node (Hirsova) at (9.5, 1) {}; \node[draw=none, fill=none, above=3pt] at (Hirsova) {Hirsova};
+		\node (Eforie) at (10.0, -0.3) {}; \node[draw=none, fill=none, below=3pt] at (Eforie) {Eforie};
+		\node (Vaslui) at (8.8, 3.2) {}; \node[draw=none, fill=none, right=3pt] at (Vaslui) {Vaslui};
+		\node (Iasi) at (8.1, 4.5) {}; \node[draw=none, fill=none, right=3pt] at (Iasi) {Iasi};
+		\node (Neamt) at (6.9, 5.2) {}; \node[draw=none, fill=none, above=3pt] at (Neamt) {Neamt};
+		
+		
+		% === ARESTAS E PESOS ===
+		\draw (Oradea) -- node[edge label, left] {71} (Zerind);
+		\draw (Oradea) -- node[edge label, right] {151} (Sibiu);
+		\draw (Zerind) -- node[edge label, left] {75} (Arad);
+		\draw (Arad) -- node[edge label, above] {140} (Sibiu);
+		\draw (Arad) -- node[edge label, left] {118} (Timisoara);
+		\draw (Timisoara) -- node[edge label, below] {111} (Lugoj);
+		\draw (Lugoj) -- node[edge label, left] {70} (Mehadia);
+		\draw (Mehadia) -- node[edge label, left] {75} (Drobeta);
+		\draw (Drobeta) -- node[edge label, above] {120} (Craiova);
+		
+		\draw (Sibiu) -- node[edge label, above] {99} (Fagaras);
+		\draw (Sibiu) -- node[edge label, left] {80} (Rimnicu);
+		
+		\draw (Rimnicu) -- node[edge label, below] {97} (Pitesti);
+		\draw (Rimnicu) -- node[edge label, left] {146} (Craiova);
+		
+		\draw (Craiova) -- node[edge label, right] {138} (Pitesti);
+		\draw (Fagaras) -- node[edge label, right, pos=0.6] {211} (Bucareste);
+		\draw (Pitesti) -- node[edge label, below] {101} (Bucareste);
+		
+		\draw (Bucareste) -- node[edge label, right] {90} (Giurgiu);
+		\draw (Bucareste) -- node[edge label, above] {85} (Urziceni);
+		
+		\draw (Urziceni) -- node[edge label, left, pos=0.7] {142} (Vaslui);
+		\draw (Urziceni) -- node[edge label, above] {98} (Hirsova);
+		
+		\draw (Hirsova) -- node[edge label, right] {86} (Eforie);
+		\draw (Vaslui) -- node[edge label, right] {92} (Iasi);
+		\draw (Iasi) -- node[edge label, above] {87} (Neamt);
+		
+	\end{tikzpicture}
+\end{figure}

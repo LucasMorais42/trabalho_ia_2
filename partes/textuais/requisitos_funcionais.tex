@@ -1,0 +1,52 @@
+
+\chapter{Requisitos Funcionais}
+Os seguintes requisitos estarão separados nos seguintes atores: Usuário, Administrador e Sistema. Ressalta-se que Administrador é uma especialização de Usuário, sendo assim, pode realizar todos os requisitos de usuário.
+
+
+\begin{quadro}[htb]
+	\caption{\label{requisitos_funcionais_user}Requisitos Funcionais de Usuário}
+	\begin{tabular}{|c|>{\centering\arraybackslash}m{9cm}|c|}
+		\hline
+		\textbf{Número} & \textbf{Descrição} & \textbf{Prioridade}\\\hline
+			RFU01 & O usuário se registra no aplicativo & Alta \\ \hline
+		RFU02 & O usuário realiza login com seus dados cadastrados & Alta \\ \hline
+		RFU03 & O usuário poderá redefinir sua senha, caso necessário & Alta \\ \hline
+		RFU04 & O usuário realiza logout do sistema & Alta \\ \hline
+		RFU05 & O usuário verifica os dados da sua conta & Alta \\ \hline
+		RFU06 & O usuário atualiza as informações do seu perfil & Alta \\ \hline
+		RFU07 & O usuário registra uma ocorrência & Alta \\ \hline
+		RFU08 & O usuário poderá ver todas as ocorrências próximas no mapa e acessar uma em particular & Média \\ \hline
+		RFU09 & O usuário visualiza todas as ocorrências & Alta \\ \hline
+		RFU10 & O usuário filtra as ocorrências por bairro, status ou realizadas por ele & Média \\ \hline
+		RFU11 & O usuário avalia uma ocorrência em específico & Alta \\ \hline
+		RFU12 & O usuário visualiza as suas notificações & Alta \\ \hline
+		RFU13 & O usuário visualiza uma ocorrência específica & Alta \\ \hline
+	\end{tabular}
+	\fonte{Autor.}
+\end{quadro}
+
+\begin{quadro}[htb]
+	\caption{\label{requisitos_funcionais_admin}Requisitos Funcionais de Administrador}
+	\begin{tabular}{|c|>{\centering\arraybackslash}m{9cm}|c|}
+		\hline
+		\textbf{Número} & \textbf{Descrição} & \textbf{Prioridade}\\ \hline
+		RFA01 & O administrador lista as categorias de ocorrência & Alta \\ \hline
+		RFA02 & O administrador cadastra uma nova categoria de ocorrência & Alta \\ \hline
+		RFA03 & O administrador atualiza categorias de ocorrência & Alta \\ \hline
+		RFA04 & O administrador inativa categorias de ocorrência & Alta \\ \hline
+		RFA05 & O administrador atualiza os status de uma ocorrência & Alta \\ \hline
+	\end{tabular}
+	\fonte{Autor.}
+\end{quadro}
+
+\begin{quadro}[htb]
+	\caption{\label{requisitos_funcionais_sistema}Requisitos Funcionais de Sistema}
+	\begin{tabular}{|c|>{\centering\arraybackslash}m{9cm}|c|}
+		\hline
+		\textbf{Número} & \textbf{Descrição} & \textbf{Prioridade}\\ \hline
+		RFS01 & O sistema filtra automaticamente os dados de localização do cidadão & Alta \\ \hline
+		RFS02 & O sistema notifica o cidadão quando o status de uma ocorrência registrada por ele foi alterada & Alta \\ \hline
+		RFS03 & O sistema emite relatórios de ocorrências & Baixa \\ \hline
+	\end{tabular}
+	\fonte{Autor.}
+\end{quadro}

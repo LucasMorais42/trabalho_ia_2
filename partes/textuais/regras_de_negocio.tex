@@ -1,0 +1,22 @@
+
+\chapter{Regras de Negócio}
+\begin{quadro}[htb]
+	\caption{\label{regras_negocio}Regras de Negócio}
+	\begin{tabular}{|c|>{\centering\arraybackslash}m{11cm}|}
+		\hline
+		\textbf{Número} & \textbf{Descrição}\\ \hline
+		RN01 & O status de uma ocorrência só poderá ser alterado por um administrador \\ \hline
+		RN02 & Cada usuário só poderá avaliar uma ocorrência apenas uma única vez \\ \hline
+		RN03 & Não é possível um usuário avaliar positivamente e negativamente uma ocorrência ao mesmo tempo \\ \hline
+		RN04 & Não é possível inativar uma categoria de ocorrência caso possuam ocorrências com os status ``PENDENTE'' ou ``EM ANDAMENTO'' \\ \hline
+		RN05 & Não é possível ter cadastros duplicados de usuário, sendo o identificador o CPF do usuário \\ \hline
+		RN06 & Uma ocorrência já arquivada não poderá receber novas avaliações \\ \hline
+		RN07 & Ocorrências concluídas não poderão voltar para o status ``PENDENTE'' \\ \hline
+		RN08 & O sistema deverá permitir imagens apenas nos formatos válidos, sendo esses .jpg, .webp e .png \\ \hline
+		RN09 & O sistema deverá impedir o cadastro de categorias com nome duplicado \\ \hline
+		RN10 & O usuário não poderá alterar o seu CPF após cadastro \\ \hline
+		RN11 & Ocorrências arquivadas não deverão aparecer para os usuários \\ \hline
+		RN12 & O sistema deverá limitar o tamanho das imagens para no máximo 10MB \\ \hline
+	\end{tabular}
+	\fonte{Autor.}
+\end{quadro}

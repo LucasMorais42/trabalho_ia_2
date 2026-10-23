@@ -1,0 +1,832 @@
+\begin{apendicesenv}
+
+    \newpage
+    \phantomsection
+    
+    \addcontentsline{toc}{chapter}{APÊNDICES}
+    \addtocontents{toc}{\protect\setcounter{tocdepth}{-1}}
+    
+    \chapter{DETALHAMENTO DE CASOS DE USO}
+    
+
+\begin{quadro}[htb]
+	\centering
+	\caption{\label{quadro_rfu01}Caso de Uso Realizar Cadastro (Baixo Nível)}
+	\small
+	\renewcommand{\arraystretch}{1.1}
+	
+	\begin{tabular}{|c|p{11cm}|}
+		\hline
+		\textbf{Caso de Uso} & RFU01 - Realizar Cadastro \\ \hline
+		\textbf{Atores} & Usuário \\ \hline
+		\textbf{Resumo} & O usuário realiza o cadastro no sistema \\ \hline
+		\textbf{Pré-Condições} & - \\ \hline
+		\textbf{Pós-Condições} & O usuário estará cadastrado no sistema \\ \hline
+		\textbf{Requisitos Relacionados} & - \\ \hline
+		\textbf{Variações Tecnológicas} & - \\ \hline
+		
+		\textbf{Fluxo Principal} &
+		\parbox[t]{11cm}{
+			\raggedright
+			1. [EV] O usuário informa seu nome, e-mail, telefone, CPF e senha, e clica em cadastrar-se.\par
+			2. [RS] O sistema informa que um código foi enviado para o e-mail informado e pede para que seja digitado.\par
+			3. [EV] O usuário informa o código recebido via e-mail.\par
+			4. [RS] Informa que o usuário foi cadastrado com sucesso.
+		}
+		\\ \hline
+		
+		\textbf{Tratamento de Exceções} &
+		\parbox[t]{11cm}{
+			\raggedright
+			\textbf{1a. O e-mail digitado é inválido}\par
+			1a$_1$. [RS] Informa que o e-mail está em um formato inválido e informa o formato permitido.\par
+			1a$_2$. Volta para o fluxo 1.\par
+			
+			\textbf{1b. O telefone digitado é inválido}\par
+			1b$_1$. [RS] Informa que o telefone é inválido.\par
+			1b$_2$. Volta para o fluxo 1.\par
+			
+			\textbf{1c. O CPF digitado é inválido}\par
+			1c$_1$. [RS] Informa que o CPF é inválido.\par
+			1c$_2$. Volta para o fluxo 1.\par
+			
+			\textbf{3a. O código digitado está incorreto}\par
+			3a$_1$. [RS] Informa que o código está incorreto e solicita que seja digitado novamente.\par
+			3a$_2$. Volta para o fluxo 3.\par
+			
+			\textbf{3b. O código não foi recebido}\par
+			3b$_1$. O usuário seleciona a opção para enviar o código novamente.\par
+			3b$_2$. [RS] Informa que o código foi reenviado.\par
+			3b$_3$. Volta para o fluxo 3.
+		}
+		\\ \hline
+	\end{tabular}
+	
+	\fonte{Autor.}
+\end{quadro}
+
+\begin{quadro}[htb]
+	\centering
+	\caption{\label{quadro_rfu02}Caso de Uso Efetuar Login (Baixo Nível)}
+	\small
+	\renewcommand{\arraystretch}{1.1}
+	
+	\begin{tabular}{|c|p{11cm}|}
+		\hline
+		\textbf{Caso de Uso} & RFU02 - Efetuar Login \\ \hline
+		\textbf{Atores} & Usuário \\ \hline
+		\textbf{Resumo} & O usuário realiza o login no sistema \\ \hline
+		\textbf{Pré-Condições} & O usuário deverá estar cadastrado no sistema \\ \hline
+		\textbf{Pós-Condições} & - \\ \hline
+		\textbf{Requisitos Relacionados} & Redefinir Senha \\ \hline
+		\textbf{Variações Tecnológicas} & - \\ \hline
+		
+		\textbf{Fluxo Principal} &
+		\parbox[t]{11cm}{
+			\raggedright
+			1. [EV] O usuário informa CPF e senha e clica em fazer login.\par
+			2. [RS] O sistema informa que o login foi efetuado com sucesso.
+		}
+		\\ \hline
+		
+		\textbf{Tratamento de Exceções} &
+		\parbox[t]{11cm}{
+			\raggedright
+			\textbf{1a. O CPF informado está incorreto}\par
+			1a$_1$. [RS] O sistema informa que não encontrou o CPF, pois não está cadastrado.\par
+			1a$_2$. Volta para o fluxo 1.\par
+			
+			\textbf{1b. A senha informada está incorreta}\par
+			1b$_1$. [RS] Informa que a senha está incorreta.\par
+			1b$_2$. O usuário pode tentar novamente ou optar por ``Redefinir Senha''.\par
+			1b$_3$. Caso selecione ``Redefinir Senha'', o sistema inicia o caso de uso \textbf{Redefinir Senha}.\par
+			1b$_4$. Caso contrário, volta ao fluxo 1.
+		}
+		\\ \hline
+	\end{tabular}
+	
+	\fonte{Autor.}
+\end{quadro}
+
+\begin{quadro}[htb]
+	\centering
+	\caption{\label{quadro_rfu03}Caso de Uso Redefinir Senha (Baixo Nível)}
+	\small
+	\renewcommand{\arraystretch}{1.1}
+	
+	\begin{tabular}{|c|p{11cm}|}
+		\hline
+		\textbf{Caso de Uso} & RFU03 - Redefinir Senha \\ \hline
+		\textbf{Atores} & Usuário \\ \hline
+		\textbf{Resumo} & O usuário redefine a sua senha de login \\ \hline
+		\textbf{Pré-Condições} & O usuário deverá estar cadastrado no sistema \\ \hline
+		\textbf{Pós-Condições} & A senha do usuário será redefinida \\ \hline
+		\textbf{Requisitos Relacionados} & Efetuar Login \\ \hline
+		\textbf{Variações Tecnológicas} & - \\ \hline
+		
+		\textbf{Fluxo Principal} &
+		\parbox[t]{11cm}{
+			\raggedright
+			1. [EV] O usuário informa uma nova senha, redigita para confirmação e clica no botão ``Redefinir Senha''.\par
+			2. [RS] Um código é enviado via e-mail para o usuário.\par
+			3. [EV] O usuário digita o código recebido e confirma.\par
+			4. [RS] O sistema informa que a senha foi redefinida com sucesso.
+		}
+		\\ \hline
+		
+		\textbf{Tratamento de Exceções} &
+		\parbox[t]{11cm}{
+			\raggedright
+			\textbf{1a. A confirmação da senha está incorreta}\par
+			1a$_1$. [RS] Informa que a confirmação da senha não está de acordo com a senha informada.\par
+			1a$_2$. Volta para o fluxo 1.\par
+			
+			\textbf{3a. O código informado está incorreto}\par
+			3a$_1$. [RS] Informa que o código digitado está incorreto.\par
+			3a$_2$. Volta para o fluxo 3.\par
+			
+			\textbf{3b. O código não foi recebido}\par
+			3b$_1$. O usuário seleciona a opção para enviar o código novamente.\par
+			3b$_2$. [RS] Informa que o código foi reenviado.\par
+			3b$_3$. Volta para o fluxo 3.
+		}
+		\\ \hline
+	\end{tabular}
+	
+	\fonte{Autor.}
+\end{quadro}
+
+\begin{quadro}[htb]
+	\centering
+	\caption{\label{quadro_rfu04}Caso de Uso Efetuar Logout (Baixo Nível)}
+	\small
+	\renewcommand{\arraystretch}{1.1}
+	
+	\begin{tabular}{|c|p{11cm}|}
+		\hline
+		\textbf{Caso de Uso} & RFU04 - Efetuar Logout \\ \hline
+		\textbf{Atores} & Usuário \\ \hline
+		\textbf{Resumo} & O usuário realiza o logout no sistema \\ \hline
+		\textbf{Pré-Condições} & O usuário deverá estar logado no sistema \\ \hline
+		\textbf{Pós-Condições} & O usuário será desconectado do sistema \\ \hline
+		\textbf{Requisitos Relacionados} & - \\ \hline
+		\textbf{Variações Tecnológicas} & - \\ \hline
+		
+		\textbf{Fluxo Principal} &
+		\parbox[t]{11cm}{
+			\raggedright
+			1. [EV] O usuário pressiona o botão ``Fazer Logout''.\par
+			2. [RS] Informa que o usuário foi desconectado com sucesso.
+		}
+		\\ \hline
+		
+		\textbf{Tratamento de Exceções} &
+		\parbox[t]{11cm}{
+			\raggedright
+			-
+		}
+		\\ \hline
+	\end{tabular}
+	
+	\fonte{Autor.}
+\end{quadro}
+
+\begin{quadro}[htb]
+	\centering
+	\caption{\label{quadro_rfu05}Caso de Uso Ver Dados do Perfil (Baixo Nível)}
+	\small
+	\renewcommand{\arraystretch}{1.1}
+	
+	\begin{tabular}{|c|p{11cm}|}
+		\hline
+		\textbf{Caso de Uso} & RFU05 - Ver Dados do Perfil \\ \hline
+		\textbf{Atores} & Usuário \\ \hline
+		\textbf{Resumo} & O usuário acessa os dados do seu perfil \\ \hline
+		\textbf{Pré-Condições} & O usuário deverá estar logado no sistema \\ \hline
+		\textbf{Pós-Condições} & O usuário visualiza as informações atualizadas do seu perfil. \\ \hline
+		\textbf{Requisitos Relacionados} & - \\ \hline
+		\textbf{Variações Tecnológicas} & - \\ \hline
+		
+		\textbf{Fluxo Principal} &
+		\parbox[t]{11cm}{
+			\raggedright
+			1. [EV] O usuário pressiona o ícone de perfil.\par
+			2. [RS] O sistema abre a página de informações do usuário.
+		}
+		\\ \hline
+		
+		\textbf{Tratamento de Exceções} &
+		\parbox[t]{11cm}{
+			\raggedright
+			-
+		}
+		\\ \hline
+	\end{tabular}
+	
+	\fonte{Autor.}
+\end{quadro}
+
+\begin{quadro}[htb]
+	\centering
+	\caption{\label{quadro_rfu06}Caso de Uso Atualizar Cadastro (Baixo Nível)}
+	\small
+	\renewcommand{\arraystretch}{1.1}
+	
+	\begin{tabular}{|c|p{11cm}|}
+		\hline
+		\textbf{Caso de Uso} & RFU06 - Atualizar Cadastro \\ \hline
+		\textbf{Atores} & Usuário \\ \hline
+		\textbf{Resumo} & O usuário atualiza os dados do seu cadastro \\ \hline
+		\textbf{Pré-Condições} & O usuário deverá estar logado no sistema \\ \hline
+		\textbf{Pós-Condições} & O usuário atualiza suas informações \\ \hline
+		\textbf{Requisitos Relacionados} & - \\ \hline
+		\textbf{Variações Tecnológicas} & - \\ \hline
+		
+		\textbf{Fluxo Principal} &
+		\parbox[t]{11cm}{
+			\raggedright
+			1. [EV] O usuário pressiona o botão de editar dados do perfil.\par
+			2. [EV] O usuário pode informar um novo nome, telefone e e-mail. Pressiona o botão de atualizar cadastro.\par
+			3. [RS] Caso apenas o nome seja atualizado, o sistema informa uma mensagem de sucesso na atualização dos dados.\par
+			4. [RS] Caso o e-mail seja atualizado, o sistema informa que um código foi enviado via e-mail para o usuário.\par
+			5. [EV] O usuário informa os códigos recebidos.\par
+			6. [RS] Informa que os códigos informados estão corretos.
+		}
+		\\ \hline
+		
+		\textbf{Tratamento de Exceções} &
+		\parbox[t]{11cm}{
+			\raggedright
+			\textbf{2a. O telefone informado está inválido}\par
+			2a$_1$. [RS] Informa que o telefone está em um formato inválido.\par
+			2a$_2$. Volta para o fluxo 2.\par
+			
+			\textbf{2b. O e-mail informado está inválido}\par
+			2b$_1$. [RS] Informa que o e-mail está em um formato inválido.\par
+			2b$_2$. Volta para o fluxo 2.\par
+			
+			\textbf{6a. O código informado está incorreto}\par
+			6a$_1$. [RS] Informa que o código digitado está incorreto.\par
+			6a$_2$. Volta para o fluxo 5.\par
+			
+			\textbf{6b. O código não foi recebido}\par
+			6b$_1$. O usuário seleciona a opção para enviar o código novamente.\par
+			6b$_2$. [RS] Informa que o código foi reenviado.\par
+			6b$_3$. Volta para o fluxo 5.
+		}
+		\\ \hline
+	\end{tabular}
+	
+	\fonte{Autor.}
+\end{quadro}
+\begin{quadro}[htb]
+	\centering
+	\caption{\label{quadro_rfu07}Caso de Uso Registrar Ocorrências (Baixo Nível)}
+	\small
+	\renewcommand{\arraystretch}{1.1}
+	
+	\begin{tabular}{|c|p{11cm}|}
+		\hline
+		\textbf{Caso de Uso} & RFU07 - Registrar Ocorrências \\ \hline
+		\textbf{Atores} & Usuário \\ \hline
+		\textbf{Resumo} & O usuário consegue registrar uma ocorrência \\ \hline
+		\textbf{Pré-Condições} & O usuário deverá estar logado no sistema. O sistema deverá ter uma lista de categorias de ocorrência já cadastradas. \\ \hline
+		\textbf{Pós-Condições} & O usuário poderá ter uma ocorrência registrada \\ \hline
+		\textbf{Requisitos Relacionados} & [RFS01] -- Filtrar dados de localização \\ \hline
+		\textbf{Variações Tecnológicas} & - \\ \hline
+		
+		\textbf{Fluxo Principal} &
+		\parbox[t]{11cm}{
+			\raggedright
+			1. [EV] O usuário seleciona a opção de registrar ocorrência.\par
+			2. [EV] O usuário seleciona uma categoria de ocorrências.\par
+			3. [RS] O sistema carrega automaticamente dados de latitude, longitude e logradouro do usuário.\par
+			4. [EV] O usuário pode, opcionalmente, selecionar o logradouro.\par
+			5. [EV] O usuário pode enviar uma foto da ocorrência.
+		}
+		\\ \hline
+		
+		\textbf{Tratamento de Exceções} &
+		\parbox[t]{11cm}{
+			\raggedright
+			\textbf{5a. A foto possui formato inválido}\par
+			5a$_1$. [RS] O sistema informa os formatos válidos de imagens que aceita.\par
+			5a$_2$. Volta para o fluxo 5.\par
+			
+			\textbf{5b. A foto possui tamanho superior ao limite}\par
+			5b$_1$. [RS] O sistema informa o tamanho máximo permitido.\par
+			5b$_2$. Volta para o fluxo 5.
+		}
+		\\ \hline
+	\end{tabular}
+	
+	\fonte{Autor.}
+\end{quadro}
+
+\begin{quadro}[htb]
+	\centering
+	\caption{\label{quadro_rfu08}Caso de Uso Ver Ocorrências no Mapa (Baixo Nível)}
+	\small
+	\renewcommand{\arraystretch}{1.1}
+	
+	\begin{tabular}{|c|p{11cm}|}
+		\hline
+		\textbf{Caso de Uso} & RFU08 - Ver Ocorrências no Mapa \\ \hline
+		\textbf{Atores} & Usuário \\ \hline
+		\textbf{Resumo} & O usuário conseguirá visualizar as ocorrências próximas no mapa. \\ \hline
+		\textbf{Pré-Condições} & O usuário deverá estar logado e na página principal. \\ \hline
+		\textbf{Pós-Condições} & O usuário verá as ocorrências próximas da sua localização. \\ \hline
+		\textbf{Requisitos Relacionados} & [RFU13] -- Visualizar ocorrência \\ \hline
+		\textbf{Variações Tecnológicas} & Sistema de geolocalização. \\ \hline
+		
+		\textbf{Fluxo Principal} &
+		\parbox[t]{11cm}{
+			\raggedright
+			1. [RS] O sistema mostrará no mapa, por meio de um ``pin'', as ocorrências próximas do usuário, considerando um raio de 500 m.
+		}
+		\\ \hline
+		
+		\textbf{Tratamento de Exceções} &
+		\parbox[t]{11cm}{
+			\raggedright
+			-- 
+		}
+		\\ \hline
+	\end{tabular}
+	
+	\fonte{Autor.}
+\end{quadro}
+
+\begin{quadro}[htb]
+	\centering
+	\caption{\label{quadro_rfu09}Caso de Uso Listar Ocorrências (Baixo Nível)}
+	\small
+	\renewcommand{\arraystretch}{1.1}
+	
+	\begin{tabular}{|c|p{11cm}|}
+		\hline
+		\textbf{Caso de Uso} & RFU09 - Listar Ocorrências \\ \hline
+		\textbf{Atores} & Usuário \\ \hline
+		\textbf{Resumo} & O usuário consegue visualizar todas as ocorrências. \\ \hline
+		\textbf{Pré-Condições} & O usuário deverá estar logado no sistema. \\ \hline
+		\textbf{Pós-Condições} & O usuário poderá visualizar todas as ocorrências registradas. \\ \hline
+		\textbf{Requisitos Relacionados} & [RFU10] -- Filtrar Ocorrência \\ \hline
+		\textbf{Variações Tecnológicas} & - \\ \hline
+		
+		\textbf{Fluxo Principal} &
+		\parbox[t]{11cm}{
+			\raggedright
+			1. [EV] O usuário seleciona a opção de listar ocorrências.\par
+			2. [RS] O sistema apresenta uma lista limitada a 5 ocorrências por pagina, contendo as informações resumidas, sendo elas: nome da categoria, nome da rua, data e hora que foi registrada e status da ocorrência. 
+		}
+		\\ \hline
+		
+		\textbf{Tratamento de Exceções} &
+		\parbox[t]{11cm}{
+			\raggedright
+			--
+		}
+		\\ \hline
+	\end{tabular}
+	
+	\fonte{Autor.}
+\end{quadro}
+
+\begin{quadro}[htb]
+	\centering
+	\caption{\label{quadro_rfu10}Caso de Uso Filtrar Ocorrência (Baixo Nível)}
+	\small
+	\renewcommand{\arraystretch}{1.1}
+	
+	\begin{tabular}{|c|p{11cm}|}
+		\hline
+		\textbf{Caso de Uso} & RFU10 - Filtrar Ocorrência \\ \hline
+		\textbf{Atores} & Usuário \\ \hline
+		\textbf{Resumo} & O usuário consegue filtrar ocorrências de acordo com uma condição. \\ \hline
+		\textbf{Pré-Condições} & O usuário deverá ter listado as ocorrências. \\ \hline
+		\textbf{Pós-Condições} & O usuário conseguirá visualizar as ocorrências de acordo com os filtros desejados. \\ \hline
+		\textbf{Requisitos Relacionados} & [RFU09] -- Listar ocorrências \\ \hline
+		\textbf{Variações Tecnológicas} & - \\ \hline
+		
+		\textbf{Fluxo Principal} &
+		\parbox[t]{11cm}{
+			\raggedright
+			1. [EV] O usuário seleciona os tipos de filtro desejados entre: status, categoria e listar ocorrências feitas pelo usuário logado.\par
+			2. [RS] O sistema filtra as ocorrências de acordo com os dados informados.
+		}
+		\\ \hline
+		
+		\textbf{Tratamento de Exceções} &
+		\parbox[t]{11cm}{
+			\raggedright
+			-
+		}
+		\\ \hline
+	\end{tabular}
+	
+	\fonte{Autor.}
+\end{quadro}
+
+\begin{quadro}[htb]
+	\centering
+	\caption{\label{quadro_rfu11}Caso de Uso Avaliar Ocorrência (Baixo Nível)}
+	\small
+	\renewcommand{\arraystretch}{1.1}
+	
+	\begin{tabular}{|c|p{11cm}|}
+		\hline
+		\textbf{Caso de Uso} & RFU11 - Avaliar Ocorrência \\ \hline
+		\textbf{Atores} & Cidadão \\ \hline
+		\textbf{Resumo} & O cidadão poderá avaliar a situação atual da ocorrência. \\ \hline
+		\textbf{Pré-Condições} & O usuário deverá estar visualizando uma ocorrência específica. \\ \hline
+		\textbf{Pós-Condições} & O usuário deixará uma avaliação na ocorrência, indicando se ela já foi solucionada ou não. \\ \hline
+		\textbf{Requisitos Relacionados} & [RFU13] -- Visualizar Ocorrência \\ \hline
+		\textbf{Variações Tecnológicas} & - \\ \hline
+		
+		\textbf{Fluxo Principal} &
+		\parbox[t]{11cm}{
+			\raggedright
+			1. [EV] O usuário seleciona entre dar um ``like'' ou ``dislike'' na ocorrência. O ``like'' indica que a ocorrência já foi solucionada, enquanto o ``dislike'' indica que ainda não foi solucionada.\par
+			2. [RS] O sistema exibe uma mensagem solicitando a confirmação da avaliação e informa qual opção foi escolhida.\par
+			3. [EV] O cidadão confirma ou cancela a avaliação.
+		}
+		\\ \hline
+		
+		\textbf{Tratamento de Exceções} &
+		\parbox[t]{11cm}{
+			\raggedright
+			--
+		}
+		\\ \hline
+	\end{tabular}
+	
+	\fonte{Autor.}
+\end{quadro}
+
+\begin{quadro}[htb]
+	\centering
+	\caption{\label{quadro_rfu12}Caso de Uso Visualizar Notificações (Baixo Nível)}
+	\small
+	\renewcommand{\arraystretch}{1.1}
+	
+	\begin{tabular}{|c|p{11cm}|}
+		\hline
+		\textbf{Caso de Uso} & RFU12 - Visualizar Notificações \\ \hline
+		\textbf{Atores} & Cidadão \\ \hline
+		\textbf{Resumo} & O usuário conseguirá visualizar as notificações relacionadas às suas ocorrências. \\ \hline
+		\textbf{Pré-Condições} & O usuário deverá estar logado e ter ocorrências registradas. \\ \hline
+		\textbf{Pós-Condições} & O usuário verá suas notificações recebidas listadas. \\ \hline
+		\textbf{Requisitos Relacionados} & - \\ \hline
+		\textbf{Variações Tecnológicas} & - \\ \hline
+		
+		\textbf{Fluxo Principal} &
+		\parbox[t]{11cm}{
+			\raggedright
+			1. [EV] O usuário pressiona o ícone de notificações.\par
+			2. [RS] O sistema lista todas as notificações recebidas pelo usuário nos últimos 30 dias.
+		}
+		\\ \hline
+		
+		\textbf{Tratamento de Exceções} &
+		\parbox[t]{11cm}{
+			\raggedright
+			--
+		}
+		\\ \hline
+	\end{tabular}
+	
+	\fonte{Autor.}
+\end{quadro}
+
+\begin{quadro}[htb]
+	\centering
+	\caption{\label{quadro_rfu13}Caso de Uso Visualizar Ocorrência (Baixo Nível)}
+	\small
+	\renewcommand{\arraystretch}{1.1}
+	
+	\begin{tabular}{|c|p{11cm}|}
+		\hline
+		\textbf{Caso de Uso} & RFU13 - Visualizar Ocorrência \\ \hline
+		\textbf{Atores} & Usuário \\ \hline
+		\textbf{Resumo} & O usuário conseguirá visualizar as informações de uma ocorrência específica. \\ \hline
+		\textbf{Pré-Condições} & O usuário deverá estar listando as ocorrências ou visualizando-as no mapa. \\ \hline
+		\textbf{Pós-Condições} & O usuário verá as informações de uma ocorrência. \\ \hline
+		\textbf{Requisitos Relacionados} & [RFU08] -- Ver ocorrências no mapa \\ \hline
+		\textbf{Variações Tecnológicas} & - \\ \hline
+		
+		\textbf{Fluxo Principal} &
+		\parbox[t]{11cm}{
+			\raggedright
+			1. [EV] O usuário seleciona uma ocorrência específica.\par
+			2. [RS] O sistema exibe as informações completas da ocorrência, sendo elas: nome da categoria, descrição, endereço completo, coordenadas geográficas, data de registro, status, foto da ocorrência (caso tenha), quantidade de avaliações positivas e negativas.
+		}
+		\\ \hline
+		
+		\textbf{Tratamento de Exceções} &
+		\parbox[t]{11cm}{
+			\raggedright
+			--
+		}
+		\\ \hline
+	\end{tabular}
+	
+	\fonte{Autor.}
+\end{quadro}
+
+\begin{quadro}[htb]
+	\centering
+	\caption{\label{quadro_rfa01}Caso de Uso Listar Categorias de Ocorrência (Baixo Nível)}
+	\small
+	\renewcommand{\arraystretch}{1.1}
+	
+	\begin{tabular}{|c|p{11cm}|}
+		\hline
+		\textbf{Caso de Uso} & RFA01 - Listar Categorias de Ocorrência \\ \hline
+		\textbf{Atores} & Administrador \\ \hline
+		\textbf{Resumo} & Todas as categorias de ocorrência cadastradas serão exibidas. \\ \hline
+		\textbf{Pré-Condições} & - \\ \hline
+		\textbf{Pós-Condições} & - \\ \hline
+		\textbf{Requisitos Relacionados} & [RFA02] -- Cadastrar categoria de ocorrência; [RFA03] -- Atualizar categoria de ocorrência; [RFA04] -- Inativar categoria de ocorrência \\ \hline
+		\textbf{Variações Tecnológicas} & - \\ \hline
+		
+		\textbf{Fluxo Principal} &
+		\parbox[t]{11cm}{
+			\raggedright
+			1. [RS] O sistema lista todas as categorias de ocorrência, informando o código da categoria, a descrição, a data de cadastro e o status da categoria, que pode ser ATIVA ou INATIVA.
+		}
+		\\ \hline
+		
+		\textbf{Tratamento de Exceções} &
+		\parbox[t]{11cm}{
+			\raggedright
+			--
+		}
+		\\ \hline
+	\end{tabular}
+	
+	\fonte{Autor.}
+\end{quadro}
+
+\begin{quadro}[htb]
+	\centering
+	\caption{\label{quadro_rfa02}Caso de Uso Registrar Categoria de Ocorrência (Baixo Nível)}
+	\small
+	\renewcommand{\arraystretch}{1.1}
+	
+	\begin{tabular}{|c|p{11cm}|}
+		\hline
+		\textbf{Caso de Uso} & RFA02 - Registrar Categoria de Ocorrência \\ \hline
+		\textbf{Atores} & Administrador \\ \hline
+		\textbf{Resumo} & Registra uma nova categoria de ocorrência. \\ \hline
+		\textbf{Pré-Condições} & O administrador deverá estar visualizando a lista de categorias de ocorrência. \\ \hline
+		\textbf{Pós-Condições} & Uma nova categoria estará disponível para o registro de ocorrências. \\ \hline
+		\textbf{Requisitos Relacionados} & [RFA01] -- Listar Categorias de Ocorrência \\ \hline
+		\textbf{Variações Tecnológicas} & - \\ \hline
+		
+		\textbf{Fluxo Principal} &
+		\parbox[t]{11cm}{
+			\raggedright
+			1. [EV] O administrador informa o nome da categoria de ocorrência e sua descrição, explicando o que ela representa.\par
+			2. [RS] O sistema informa que a categoria foi registrada com sucesso.
+		}
+		\\ \hline
+		
+		\textbf{Tratamento de Exceções} &
+		\parbox[t]{11cm}{
+			\raggedright
+			\textbf{1a. A categoria já existe}\par
+			1a$_1$. [RS] O sistema informa que a categoria a ser cadastrada já existe.\par
+			1a$_2$. Volta para o fluxo 1.
+		}
+		\\ \hline
+	\end{tabular}
+	
+	\fonte{Autor.}
+\end{quadro}
+
+\begin{quadro}[htb]
+	\centering
+	\caption{\label{quadro_rfa03}Caso de Uso Atualizar Categoria de Ocorrência (Baixo Nível)}
+	\small
+	\renewcommand{\arraystretch}{1.1}
+	
+	\begin{tabular}{|c|p{11cm}|}
+		\hline
+		\textbf{Caso de Uso} & RFA03 - Atualizar Categoria de Ocorrência \\ \hline
+		\textbf{Atores} & Administrador \\ \hline
+		\textbf{Resumo} & Atualiza uma categoria já existente. \\ \hline
+		\textbf{Pré-Condições} & A categoria deverá estar previamente cadastrada. \\ \hline
+		\textbf{Pós-Condições} & O nome e a descrição da categoria serão atualizados. \\ \hline
+		\textbf{Requisitos Relacionados} & [RFA01] -- Listar Categorias de Ocorrência \\ \hline
+		\textbf{Variações Tecnológicas} & - \\ \hline
+		
+		\textbf{Fluxo Principal} &
+		\parbox[t]{11cm}{
+			\raggedright
+			1. [EV] O administrador informa o novo nome, a descrição e/ou o status da categoria.\par
+			2. [RS] O sistema informa que a atualização foi concluída com sucesso.
+		}
+		\\ \hline
+		
+		\textbf{Tratamento de Exceções} &
+		\parbox[t]{11cm}{
+			\raggedright
+			\textbf{1a. A categoria foi atualizada para um nome que já existe}\par
+			1a$_1$. [RS] O sistema informa que o novo nome já existe.\par
+			1a$_2$. Volta para o fluxo 1.\par
+			
+			\textbf{1b. A categoria possui ocorrências pendentes}\par
+			1b$_1$. [RS] O sistema informa que não é possível inativar a categoria, pois há ocorrências pendentes.
+		}
+		\\ \hline
+	\end{tabular}
+	
+	\fonte{Autor.}
+\end{quadro}
+
+\begin{quadro}[htb]
+	\centering
+	\caption{\label{quadro_rfa04}Caso de Uso Buscar Categoria de Ocorrência Especifica (Baixo Nível)}
+	\small
+	\renewcommand{\arraystretch}{1.1}
+	
+	\begin{tabular}{|c|p{11cm}|}
+		\hline
+		\textbf{Caso de Uso} & RFA04 - Buscar Categoria de Ocorrência Especifica \\ \hline
+		\textbf{Atores} & Administrador \\ \hline
+		\textbf{Resumo} & Busca dados de uma categoria especifica. \\ \hline
+		\textbf{Pré-Condições} & A categoria deverá estar previamente cadastrada. \\ \hline
+		\textbf{Pós-Condições} & O nome, a descrição, data de cadastro e data da última atualização e o status da categoria serão carregados. \\ \hline
+		\textbf{Requisitos Relacionados} & [RFA01] -- Listar Categorias de Ocorrência \\ \hline
+		\textbf{Variações Tecnológicas} & - \\ \hline
+		
+		\textbf{Fluxo Principal} &
+		\parbox[t]{11cm}{
+			\raggedright
+			1. [EV] O administrador dentre a listagem de categorias cadastrado escolhe 1.\par
+			2. [RS] O sistema busca as informações: nome, descrição, data de cadastro, data da ultima atualização e retorna.
+		}
+		\\ \hline
+		
+		\textbf{Tratamento de Exceções} &
+		\parbox[t]{11cm}{
+			\raggedright
+		-
+		}
+		\\ \hline
+	\end{tabular}
+	
+	\fonte{Autor.}
+\end{quadro}
+
+
+\begin{quadro}[htb]
+	\centering
+	\caption{\label{quadro_rfa05}Caso de Uso Atualizar Status da Ocorrência (Baixo Nível)}
+	\small
+	\renewcommand{\arraystretch}{1.1}
+	
+	\begin{tabular}{|c|p{11cm}|}
+		\hline
+		\textbf{Caso de Uso} & RFA05 - Atualizar Status da Ocorrência \\ \hline
+		\textbf{Atores} & Administrador \\ \hline
+		\textbf{Resumo} & Atualiza o status da ocorrência. \\ \hline
+		\textbf{Pré-Condições} & O administrador deverá estar visualizando uma ocorrência específica. \\ \hline
+		\textbf{Pós-Condições} & O status da ocorrência será atualizado e o usuário que a registrou será notificado. \\ \hline
+		\textbf{Requisitos Relacionados} & [RFS02] -- Notificar Usuário \\ \hline
+		\textbf{Variações Tecnológicas} & - \\ \hline
+		
+		\textbf{Fluxo Principal} &
+		\parbox[t]{11cm}{
+			\raggedright
+			1. [EV] O administrador informa o novo status da ocorrência entre: EM ANDAMENTO, CONCLUÍDO e ARQUIVADO.\par
+			2. [RS] O sistema informa que o status foi alterado com sucesso.\par
+			3. [RS] O sistema envia uma notificação ao usuário por meio do caso de uso \textbf{Notificar Usuário}.
+		}
+		\\ \hline
+		
+		\textbf{Tratamento de Exceções} &
+		\parbox[t]{11cm}{
+			\raggedright
+			\textbf{1a. O status da ocorrência já está como ``CONCLUÍDO'' ou ``ARQUIVADO''}\par
+			1a$_1$. [RS] O sistema informa que essa ação não pode ser realizada.\par
+			1a$_2$. Volta para o fluxo 1.
+		}
+		\\ \hline
+	\end{tabular}
+	
+	\fonte{Autor.}
+\end{quadro}
+
+\begin{quadro}[htb]
+	\centering
+	\caption{\label{quadro_rfs01}Caso de Uso Filtrar Dados de Localização (Baixo Nível)}
+	\small
+	\renewcommand{\arraystretch}{1.1}
+	
+	\begin{tabular}{|c|p{11cm}|}
+		\hline
+		\textbf{Caso de Uso} & RFS01 - Filtrar Dados de Localização \\ \hline
+		\textbf{Atores} & Sistema \\ \hline
+		\textbf{Resumo} & O sistema mostrará as informações da localização do usuário. \\ \hline
+		\textbf{Pré-Condições} & O sistema deverá estar registrando uma ocorrência. \\ \hline
+		\textbf{Pós-Condições} & O sistema obterá os dados da localização atual do usuário. \\ \hline
+		\textbf{Requisitos Relacionados} & [RFU07] -- Registrar Ocorrência \\ \hline
+		\textbf{Variações Tecnológicas} & - \\ \hline
+		
+		\textbf{Fluxo Principal} &
+		\parbox[t]{11cm}{
+			\raggedright
+			1. [EV] O sistema recebe as informações de longitude e latitude do usuário.\par
+			2. [RS] O sistema consulta uma base de dados externa e retorna o logradouro, o CEP e o bairro.
+		}
+		\\ \hline
+		
+		\textbf{Tratamento de Exceções} &
+		\parbox[t]{11cm}{
+			\raggedright
+			\textbf{1a. Não foi possível obter a longitude e a latitude do usuário}\par
+			1a$_1$. [RS] O sistema informa que não foi possível obter os dados de localização do usuário e solicita que sejam inseridos manualmente.\par
+			1a$_2$. Volta para o fluxo 1.
+		}
+		\\ \hline
+	\end{tabular}
+	
+	\fonte{Autor.}
+\end{quadro}
+
+\begin{quadro}[htb]
+	\centering
+	\caption{\label{quadro_rfs02}Caso de Uso Notificar Usuário (Baixo Nível)}
+	\small
+	\renewcommand{\arraystretch}{1.1}
+	
+	\begin{tabular}{|c|p{11cm}|}
+		\hline
+		\textbf{Caso de Uso} & RFS02 - Notificar Usuário \\ \hline
+		\textbf{Atores} & Sistema \\ \hline
+		\textbf{Resumo} & O sistema envia uma notificação ao usuário quando o status de uma ocorrência é alterado. \\ \hline
+		\textbf{Pré-Condições} & A ocorrência deve ter usuários interessados (usuário que registrou e usuários que avaliaram). \\ \hline
+		\textbf{Pós-Condições} & Uma notificação será adicionada à lista de notificações dos usuários interessados. \\ \hline
+		\textbf{Requisitos Relacionados} & [RFA05] -- Atualizar Status da Ocorrência \\ \hline
+		\textbf{Variações Tecnológicas} & Notificação push \\ \hline
+		
+		\textbf{Fluxo Principal} &
+		\parbox[t]{11cm}{
+			\raggedright
+			1. [EV] O sistema recebe o código da ocorrência, o status atualizado e o ID dos usuários interessados na ocorrência.\par
+			2. [RS] O sistema carrega os tokens dos dispositivos móveis dos usuários interessados na ocorrência. 
+			2. [RS] O sistema envia uma notificação ao usuário contendo o código da ocorrência e o novo status.
+		}
+		\\ \hline
+		
+		\textbf{Tratamento de Exceções} &
+		\parbox[t]{11cm}{
+			\raggedright
+			--
+		}
+		\\ \hline
+	\end{tabular}
+	
+	\fonte{Autor.}
+\end{quadro}
+
+\begin{quadro}[htb]
+	\centering
+	\caption{\label{quadro_rfs03}Caso de Uso Emitir Relatórios de Ocorrências (Baixo Nível)}
+	\small
+	\renewcommand{\arraystretch}{1.1}
+	
+	\begin{tabular}{|c|p{11cm}|}
+		\hline
+		\textbf{Caso de Uso} & RFS03 - Emitir Relatórios de Ocorrências \\ \hline
+		\textbf{Atores} & Sistema \\ \hline
+		\textbf{Resumo} & O sistema emite relatórios de ocorrências. \\ \hline
+		\textbf{Pré-Condições} & Deverá haver pelo menos uma ocorrência registrada. \\ \hline
+		\textbf{Pós-Condições} & O administrador solicitante receberá por e-mail um arquivo PDF com o relatório de ocorrências, considerando os filtros estipulados. \\ \hline
+		\textbf{Requisitos Relacionados} & - \\ \hline
+		\textbf{Variações Tecnológicas} & - \\ \hline
+		
+		\textbf{Fluxo Principal} &
+		\parbox[t]{11cm}{
+			\raggedright
+			1. [EV] O administrador informa as datas que deseja utilizar como filtro no relatório.\par
+			2. [EV] O administrador informa os bairros que deseja utilizar como filtro no relatório.\par
+			3. [EV] O administrador informa os status das ocorrências que deseja utilizar como filtro.\par
+			4. [RS] O sistema informa que o relatório está sendo gerado e que será disponibilizado em formato PDF por e-mail.
+		}
+		\\ \hline
+		
+		\textbf{Tratamento de Exceções} &
+		\parbox[t]{11cm}{
+			\raggedright
+			--
+		}
+		\\ \hline
+	\end{tabular}
+	
+	\fonte{Autor.}
+\end{quadro}
+    
+    \addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
+\end{apendicesenv}
