@@ -3,37 +3,38 @@
 % ---
 \chapter{RESOLUÇÃO DE PROBLEMAS}
 
-Os primeiros pesquisadores de IA precisaram encontrar mecanismos para resolver problemas cuja solução tinha alta complexidade apenas usando técnicas convencionais de programação, devido a limitações físicas de memoria RAM e capacidade de processamento. As técnicas convencionais de programação usando praticas determinísticas, isto e, usando condições previsíveis.
+Os primeiros pesquisadores de IA precisaram encontrar mecanismos para resolver problemas cuja solução tinha alta complexidade apenas usando técnicas convencionais de programação, devido a limitações físicas de memoria RAM e capacidade de processamento. As técnicas convencionais de programação usando praticas determinísticas, isto é, usando condições previsíveis.
 
 Uma das principais técnicas adotadas para resolver problemas complexos para seres humanos e que não era possível a aplicação de técnicas convencionais foi o método da busca. Alguns dos principais exemplos de problemas que essa técnica visava resolver são: Quebra-Cabeças 3x3, Caixeiro Viajante, Calculo Integral Formal, Torre de Hanoi, Problemas de Rota Minima etc.
 
 \section{Espaço do Problema e Espaço de Solução} 
-As técnicas de busca em IA irão buscar as soluções possíveis em um espaço do problema, não em uma estrutura de dados pre-definida convencional que armazena todos os resultados. A estrategia utilizada nos algoritmos de busca visa encontrar um caminho saindo de um \textbf{estado\footnote{Um estado nada mais e do que um recorte do problema no momento atual, como por exemplo em um jogo de xadrez em que a cada movimento feito pelos jogadores o tabuleiro apresenta uma configuração única.} inicial} ate um \textbf{estado objetivo}, e esse processo de busca define o que chamamos de \textbf{espaço da solução}. 
+As técnicas de busca em IA irão buscar as soluções possíveis em um espaço do problema, não em uma estrutura de dados pré-definida convencional que armazena todos os resultados. A estratégia utilizada nos algoritmos de busca visa encontrar um caminho saindo de um \textbf{estado\footnote{Um estado nada mais é do que um recorte do problema no momento atual, como por exemplo em um jogo de xadrez em que a cada movimento feito pelos jogadores o tabuleiro apresenta uma configuração única.} inicial} até um \textbf{estado objetivo}, e esse processo de busca define o que chamamos de \textbf{espaço da solução}. 
 
-Ao contrario da programação convencional usando estruturas de dados no qual o espaço de problema ja existe, na solução por busca o espaço de problemas passa a existir e e gerado com o decorrer da execução do algoritmo. 
+Ao contrário da programação convencional usando estruturas de dados no qual o espaço de problema já existe, na solução por busca o espaço de problemas passa a existir e é gerado com o decorrer da execução do algoritmo. 
 
-Para definir os conceitos principais usaremos um dos exemplos mais comuns sobre esse topico, o problema de Arad-Bucareste, este problema em especifico consiste em saber a menor rota saindo de Arad e chegando em Bucareste. 
+Para definir os conceitos principais usaremos um dos exemplos mais comuns sobre esse tópico, o problema de Arad-Bucareste, este problema em específico consiste em saber a menor rota saindo de Arad e chegando em Bucareste. 
 
 
 
 Para definir um problema formalmente temos que ter os seguintes elementos:
 
 \begin{itemize}
-	\item \textbf{Estado inicial: } definir o estado de partida que sera avaliado por nossa Inteligencia Artificial. No nosso problema de exemplo: Arad;
-	\item \textbf{Ações: }As acoes são operações que podem ser feitas um estado atual. Podem haver varias ações. As acoes possuem pre-condições para serem executadas. No nosso exemplo uma ação sera sair de uma cidade e ir pra outra (como podem haver varias cidades atingíveis, temos várias ações).
-	\item \textbf{Transiçao: }As transiçoes definem qual sera o estado ao aplicar uma açao qualquer em um estado. No nosso exemplo uma transiçao definiria o resultado de aplicar a açao "ir para Zerind" no estado "Arad", como resultado temos "Zerind". 
-	\item  \textbf{Espaço de Estados: } O espaço de estados nada mais eh do que o conjunto de todos os estados acessiveis a partir do estado inicial. Esse espaço de estado eh definidio pelo espaço inicial, pelo conjunto de açoes e pelo conjunto de resultados. O espaço de estados pode ser visualizado como um grafo dirigido.
-	\item \textbf{Teste de Objetivo: }Este teste determina se o estado vigente e o nosso estado objetivo. No nosso exemplo seria simplesmente verificar se o estado atual e igual a Bucareste.
-	\item \textbf{Funçao custo de caminho: }O custo de caminho considera o tanto que foi gasto para chegar ate o estado vigente, considerando os passos anteriores. O custo de passo seria o custo ao adotar um açao $a$ qualquer em um estado $s$ e ir para um estado $s'$
+	\item \textbf{Estado inicial: } definir o estado de partida que será avaliado por nossa Inteligencia Artificial. No nosso problema de exemplo: Arad;
+	\item \textbf{Ações: }As ações são operações que podem ser feitas em um estado atual. Podem haver várias ações. As ações possuem pré-condições para serem executadas. No nosso exemplo uma ação seria sair de uma cidade e ir pra outra (como podem haver várias cidades atingíveis, temos várias ações).
+	\item \textbf{Transiçao: }As transições definem qual será o estado ao aplicar uma ação qualquer em um estado. No nosso exemplo uma transição definiria o resultado de aplicar a ação "ir para Zerind" no estado "Arad", como resultado temos "Zerind". 
+	\item  \textbf{Espaço de Estados: } O espaço de estados nada mais é do que o conjunto de todos os estados acessíveis a partir do estado inicial. Esse espaço de estado é definido pelo espaço inicial, pelo conjunto de ações e pelo conjunto de resultados. O espaço de estados pode ser visualizado como um grafo dirigido.
+	\item \textbf{Teste de Objetivo: }Este teste determina se o estado vigente é o nosso estado objetivo. No nosso exemplo seria simplesmente verificar se o estado atual é igual a Bucareste.
+	\item \textbf{Função custo de caminho: }O custo de caminho considera o tanto que foi gasto para chegar até o estado vigente, considerando os passos anteriores. O custo de passo seria o custo ao adotar um ação $a$ qualquer em um estado $s$ e ir para um estado $s'$
 \end{itemize}
 
 
-\centering
+
 \begin{figure}[H]
+	\centering
+	\caption{Rotas do problema Arad-Bucareste}
 	\begin{tikzpicture}[
 		scale=1.5, % Ajusta o tamanho geral do grafo
 		every node/.style={draw, rectangle, fill=gray!50, inner sep=3.5pt}, % Vértices quadrados cinzas como na imagem
-		
 		edge label/.style={draw=none, fill=none, rectangle, inner sep=2pt, font=\small} % Estilo para os pesos
 		]
 		
@@ -97,4 +98,219 @@ Para definir um problema formalmente temos que ter os seguintes elementos:
 		\draw (Iasi) -- node[edge label, above] {87} (Neamt);
 		
 	\end{tikzpicture}
+	\fonte{dos Autores.}
 \end{figure}
+\newpage
+
+\section{Tipos de Resolução por Busca}
+
+Após a formulação de um problema, é necessário definir qual estratégia de busca será utilizada para encontrar uma solução. Essa escolha é importante, pois diferentes algoritmos podem percorrer o espaço de estados de maneiras distintas, afetando o tempo de execução, o consumo de memória e a qualidade da solução encontrada.
+
+As estratégias de busca podem ser divididas em duas categorias principais: busca não informada e busca informada.
+
+\subsection{Busca Não Informada}
+
+A busca não informada, também conhecida como busca cega, consiste em explorar o espaço de estados sem utilizar informações adicionais sobre a proximidade entre o estado atual e o estado objetivo.
+
+Nesse tipo de busca, o algoritmo utiliza apenas as informações fornecidas pela formulação do problema, como os estados disponíveis, as ações possíveis, o teste de objetivo e os custos das ações, quando aplicáveis.
+
+
+No problema de Arad-Bucareste, uma busca não informada não utiliza informações sobre a distância estimada entre uma cidade e Bucareste. A escolha das próximas cidades depende exclusivamente da estratégia adotada pelo algoritmo.
+
+Alguns dos principais algoritmos de busca não informada são:
+
+\subsubsection{Busca em Largura}
+Explora os estados de acordo com sua profundidade, visitando primeiro os estados mais próximos do estado inicial em número de ações. Quando todas as ações possuem o mesmo custo, encontra uma solução de menor custo;
+\begin{figure}[H]
+	\caption{Exploração dos estados usando a busca em largura}
+	\centering
+	
+	
+	\begin{minipage}{0.30\textwidth}
+		\centering
+		\begin{tikzpicture}[
+			scale=1.5, % Ajusta o tamanho geral do grafo
+			every node/.style={draw, circle, fill=gray!50, inner sep=3.5pt}, % Vértices quadrados cinzas como na imagem
+			edge label/.style={draw=none, fill=none, rectangle, inner sep=2pt, font=\small} % Estilo para os pesos
+			]
+		\node (A) at (1.5, 6) {}; \node[draw=none, fill=none, right=3pt] at (A) {A};
+		
+		\end{tikzpicture}
+	\end{minipage}
+	\hfill
+	\begin{minipage}{0.30\textwidth}
+		\centering
+		\begin{tikzpicture}[
+			scale=1.5, % Ajusta o tamanho geral do grafo
+			every node/.style={draw, circle, fill=gray!50, inner sep=3.5pt}, % Vértices quadrados cinzas como na imagem
+			edge label/.style={draw=none, fill=none, rectangle, inner sep=2pt, font=\small} % Estilo para os pesos
+			]
+			\node (A) at (1.5, 6) {}; \node[draw=none, fill=none, right=3pt] at (A) {A};
+			\node (B) at (1, 5.3) {}; \node[draw=none, fill=none, right=3pt] at (B) {B};
+			\node (C) at (2, 5.3) {}; \node[draw=none, fill=none, right=3pt] at (C) {C};
+			
+			\draw (A) -- node[edge label, right] {} (B);
+			\draw (A) -- node[edge label, above] {} (C);
+		\end{tikzpicture}
+	\end{minipage}
+	\hfill
+	\begin{minipage}{0.30\textwidth}
+		\centering
+		\begin{tikzpicture}[
+			scale=1.5, % Ajusta o tamanho geral do grafo
+			every node/.style={draw, circle, fill=gray!50, inner sep=3.5pt}, % Vértices quadrados cinzas como na imagem
+			edge label/.style={draw=none, fill=none, rectangle, inner sep=2pt, font=\small} % Estilo para os pesos
+			]
+			\node (A) at (1.5, 6) {}; \node[draw=none, fill=none, right=3pt] at (A) {A};
+			\node (B) at (1, 5.3) {}; \node[draw=none, fill=none, right=3pt] at (B) {B};
+			\node (C) at (2, 5.3) {}; \node[draw=none, fill=none, right=3pt] at (C) {C};
+			\node (D) at (0.5, 4.3) {}; \node[draw=none, fill=none, right=3pt] at (D) {D};
+			\node (E) at (1.5, 4.3) {}; \node[draw=none, fill=none, right=3pt] at (E) {E};
+			
+			\draw (A) -- node[edge label, right] {} (B);
+			\draw (A) -- node[edge label, above] {} (C);
+			\draw (B) -- node[edge label, above] {} (D);
+			\draw (B) -- node[edge label, above] {} (E);
+		\end{tikzpicture}
+	\end{minipage}
+	
+
+	\fonte{dos Autores.}
+\end{figure}
+É demonstrável na busca em largura a maneira que os estados são visitados, o funcionamento primeiro visita os vizinhos iniciais de um nó, depois os vizinhos de um vizinho e assim por diante. Na imagem acima, temos inicialmente só o estado $A$, depois são visitados os estados $B$ e $C$, depois o estado $B$ é analisado visitando os seus vizinhos ($D$ e $E$).
+	
+\subsubsection{Busca em Profundidade} explora um caminho até encontrar um estado sem sucessores ainda não explorados ou atingir o objetivo. Caso não encontre a solução, retorna aos estados anteriores para explorar outros caminhos;
+
+\subsubsection{Busca de Custo Uniforme} 
+
+prioriza a expansão dos estados que possuem o menor custo acumulado desde o estado inicial. Dessa forma, considerando custos de ações positivos, permite encontrar um caminho de custo mínimo.
+
+
+
+\subsection{Busca Informada}
+
+A busca informada diferencia-se da busca não informada por utilizar informações adicionais sobre o problema para orientar a exploração dos estados.
+
+Essas informações são representadas por uma função heurística, cuja finalidade é estimar o custo necessário para alcançar o estado objetivo a partir de um determinado estado.
+
+Dessa forma, o algoritmo pode priorizar estados considerados mais promissores, evitando, em determinadas situações, a exploração de caminhos que apresentam menores possibilidades de conduzir rapidamente ao objetivo.
+
+Entre os principais algoritmos de busca informada, destacam-se:
+
+\begin{itemize}
+	\item \textbf{Busca Gulosa:} seleciona para expansão o estado que apresenta a menor estimativa de custo até o objetivo, considerando apenas a função heurística;
+	
+	\item \textbf{Busca A*:} considera tanto o custo acumulado desde o estado inicial quanto a estimativa de custo restante até o objetivo, combinando essas informações para determinar qual estado será explorado.
+\end{itemize}
+
+\section{Heurística}
+
+Uma heurística é uma função utilizada para estimar o custo necessário para alcançar o estado objetivo a partir de um determinado estado. Essa função é representada por $h(n)$, sendo $n$ o estado que está sendo avaliado.
+
+A heurística não precisa informar o custo exato para alcançar o objetivo, mas deve fornecer uma estimativa útil para orientar a busca.
+
+No problema de Arad-Bucareste, podemos utilizar como heurística a distância em linha reta entre a cidade atual e Bucareste.
+
+Por exemplo, considerando algumas cidades do problema, temos as seguintes estimativas:
+
+\begin{itemize}
+	\item Arad: $h(n) = 366$ km;
+	\item Sibiu: $h(n) = 253$ km;
+	\item Fagaras: $h(n) = 176$ km;
+	\item Rimnicu Vilcea: $h(n) = 193$ km;
+	\item Pitesti: $h(n) = 100$ km;
+	\item Bucareste: $h(n) = 0$ km.
+\end{itemize}
+
+Esses valores representam a distância geográfica aproximada em linha reta até Bucareste, e não necessariamente a distância real percorrida pelas estradas.
+
+Essa distinção é importante, pois a menor distância em linha reta não garante que o caminho percorrido pelas estradas seja o de menor custo.
+
+\subsection{Aplicação da Busca Gulosa}
+
+Na busca gulosa, o algoritmo utiliza exclusivamente o valor da heurística para determinar qual estado deve ser explorado.
+
+A função de avaliação desse algoritmo é definida por:
+
+\begin{equation}
+	f(n) = h(n)
+\end{equation}
+
+Considerando o problema de Arad-Bucareste, partindo de Arad, o algoritmo avalia as cidades diretamente acessíveis e seleciona aquela que apresenta a menor distância estimada até Bucareste.
+
+Entre as opções disponíveis, Sibiu possui a menor estimativa, com 253 km. A partir de Sibiu, o algoritmo compara os estados sucessores e seleciona Fagaras, cuja estimativa é de 176 km, inferior aos 193 km de Rimnicu Vilcea.
+
+Finalmente, partindo de Fagaras, o algoritmo alcança Bucareste.
+
+O caminho encontrado é:
+
+\begin{center}
+	Arad $\rightarrow$ Sibiu $\rightarrow$ Fagaras $\rightarrow$ Bucareste
+\end{center}
+
+Considerando os custos apresentados na figura anterior, o custo total desse caminho é:
+
+
+\[140 + 99 + 211 = 450 km\]
+
+
+Entretanto, esse não é o menor caminho possível. Isso ocorre porque a busca gulosa considera apenas a estimativa de custo restante, desconsiderando o custo já percorrido para alcançar cada estado.
+
+\subsection{Aplicação da Busca A*}
+
+Diferentemente da busca gulosa, o algoritmo A* considera tanto o custo acumulado até o estado atual quanto a estimativa do custo restante até o objetivo.
+
+Sua função de avaliação é definida por:
+
+\[f(n) = g(n) + h(n)\]
+
+
+Onde:
+
+\begin{itemize}
+	\item $f(n)$ representa o custo total estimado de um caminho que passa pelo estado $n$;
+	\item $g(n)$ representa o custo real acumulado desde o estado inicial até o estado $n$;
+	\item $h(n)$ representa a estimativa do custo restante para alcançar o objetivo.
+\end{itemize}
+
+No problema de Arad-Bucareste, ao alcançar Sibiu a partir de Arad, temos:
+
+\[ Sibiu = 140 + 253 = 393 \]
+
+
+Nesse caso, 140 km representam o custo já percorrido desde Arad, enquanto 253 km representam a estimativa de distância restante até Bucareste.
+
+Ao avaliar os caminhos disponíveis, o algoritmo A* prioriza o estado que apresenta o menor valor de $f(n)$.
+
+Utilizando a distância em linha reta como heurística, o algoritmo encontra o seguinte caminho de menor custo:
+
+\begin{center}
+	Arad $\rightarrow$ Sibiu $\rightarrow$ Rimnicu Vilcea
+	$\rightarrow$ Pitesti $\rightarrow$ Bucareste
+\end{center}
+
+O custo total desse caminho é:
+
+
+\[140 + 80 + 97 + 101 = 418km\]
+
+Portanto, enquanto a busca gulosa encontrou um caminho de 450 km, o algoritmo A* encontrou um caminho de 418 km.
+
+Essa diferença ocorre porque o A* considera o custo já percorrido e a estimativa do custo restante, enquanto a busca gulosa considera apenas a estimativa.
+
+Quando utilizada com uma heurística admissível, que nunca superestima o custo real restante, e com as condições adequadas de exploração dos estados, a busca A* garante encontrar uma solução de custo mínimo.
+
+\section{Considerações sobre a Resolução de Problemas por Busca}
+
+A resolução de problemas por busca permite encontrar sequências de ações capazes de transformar um estado inicial em um estado objetivo.
+
+Para que esse processo seja realizado, é necessário definir corretamente os estados, as ações disponíveis, as transições entre os estados, o teste de objetivo e os custos envolvidos.
+
+O espaço de estados representa todas as configurações alcançáveis a partir do estado inicial, enquanto o algoritmo de busca determina quais dessas configurações serão exploradas durante a procura por uma solução.
+
+A utilização de heurísticas permite orientar a exploração desse espaço, utilizando estimativas sobre o custo necessário para alcançar o objetivo. Entretanto, a eficiência e a qualidade da solução dependem da estratégia de busca adotada e das características da heurística utilizada.
+
+O problema de Arad-Bucareste demonstra essas diferenças, pois diferentes algoritmos podem encontrar caminhos com custos distintos, mesmo partindo do mesmo estado inicial e buscando alcançar o mesmo objetivo.
+
+
+
