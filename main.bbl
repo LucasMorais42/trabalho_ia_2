@@ -5,4 +5,101 @@
 \providecommand{\abntbstabout}[1]{}
 \abntbstabout{v-1.9.7 }
 
+\bibitem[{Amazon Web Services} 2026]{awsML}
+\abntrefinfo{{Amazon Web Services}}{{Amazon Web Services}}{2026}
+{{Amazon Web Services}. What is machine learning?
+2026.
+Dispon{\'\i}vel em: \url{https://aws.amazon.com/what-is/machine-learning/}.
+  Acesso em: 23 nov. 2026.}
+
+\bibitem[Gomez-Uribe e Hunt 2015]{netflixRecommender}
+\abntrefinfo{Gomez-Uribe e Hunt}{GOMEZ-URIBE; HUNT}{2015}
+{GOMEZ-URIBE, C.~A.; HUNT, N. The netflix recommender system: Algorithms,
+  business value, and innovation.
+\emph{ACM Transactions on Management Information Systems}, v.~6, n.~4, p.
+  1--19, 2015.
+Dispon{\'\i}vel em: \url{https://doi.org/10.1145/2843948}.}
+
+\bibitem[{Google} 2023]{googleAIMaps}
+\abntrefinfo{{Google}}{{Google}}{2023}
+{{Google}. Google has a long history of using artificial intelligence to
+  improve our products for billions of people.
+2023.
+Dispon{\'\i}vel em:
+  \url{https://ai.google/static/documents/google-about-generative-ai.pdf}.
+  Acesso em: 23 nov. 2026.}
+
+\bibitem[{Google Cloud} 2025]{googleSupervised}
+\abntrefinfo{{Google Cloud}}{{Google Cloud}}{2025}
+{{Google Cloud}. What is supervised learning?
+2025.
+Dispon{\'\i}vel em:
+  \url{https://cloud.google.com/discover/what-is-supervised-learning}. Acesso
+  em: 22 nov. 2026.}
+
+\bibitem[{Google Cloud} 2026]{googlecloudML}
+\abntrefinfo{{Google Cloud}}{{Google Cloud}}{2026a}
+{{Google Cloud}. What is machine learning? types and uses.
+2026.
+Dispon{\'\i}vel em:
+  \url{https://cloud.google.com/learn/what-is-machine-learning}. Acesso em: 23
+  nov. 2026.}
+
+\bibitem[{Google Cloud} 2026]{googleUnsupervised}
+\abntrefinfo{{Google Cloud}}{{Google Cloud}}{2026b}
+{{Google Cloud}. What is unsupervised learning?
+2026.
+Dispon{\'\i}vel em:
+  \url{https://cloud.google.com/discover/what-is-unsupervised-learning}. Acesso
+  em: 23 nov. 2026.}
+
+\bibitem[{Google Workspace} 2016]{googleGmailML}
+\abntrefinfo{{Google Workspace}}{{Google Workspace}}{2016}
+{{Google Workspace}. How machine learning in g suite makes people more
+  productive.
+2016.
+Dispon{\'\i}vel em:
+  \url{https://workspace.google.com/blog/ai-and-machine-learning/how-machine-learning-g-suite-makes-people-more-productive}.
+  Acesso em: 23 nov. 2026.}
+
+\bibitem[{Google Workspace} 2019]{googleSpamTensorflow}
+\abntrefinfo{{Google Workspace}}{{Google Workspace}}{2019}
+{{Google Workspace}. Spam does not bring us joy---ridding gmail of 100 million
+  more spam messages with tensorflow.
+2019.
+Dispon{\'\i}vel em:
+  \url{https://workspace.google.com/blog/product-announcements/ridding-gmail-of-100-million-more-spam-messages-with-tensorflow}.
+  Acesso em: 22 nov. 2026.}
+
+\bibitem[{IBM} 2026]{ibmML}
+\abntrefinfo{{IBM}}{{IBM}}{2026}
+{{IBM}. What is machine learning?
+2026.
+Dispon{\'\i}vel em: \url{https://www.ibm.com/think/topics/machine-learning}.
+  Acesso em: 22 nov. 2026.}
+
+\bibitem[{Inspirisys} 2023]{img1}
+\abntrefinfo{{Inspirisys}}{{Inspirisys}}{2023}
+{{Inspirisys}. Key benefits of machine learning for businesses.
+2023.
+Dispon{\'\i}vel em:
+  \url{https://www.inspirisys.com/blog-details/Key-Benefits-of-Machine-Learning-for-Businesses/143}.
+  Acesso em: 22 nov. 2026.}
+
+\bibitem[{Netflix Research} 2026]{netflixResearch}
+\abntrefinfo{{Netflix Research}}{{Netflix Research}}{2026}
+{{Netflix Research}. Recommendations.
+2026.
+Dispon{\'\i}vel em:
+  \url{https://research.netflix.com/research-area/recommendations}. Acesso em:
+  22 nov. 2026.}
+
+\bibitem[{TechVidvan} 2023]{img2}
+\abntrefinfo{{TechVidvan}}{{TechVidvan}}{2023}
+{{TechVidvan}. Advantages and disadvantages of machine learning.
+2023.
+Dispon{\'\i}vel em:
+  \url{https://techvidvan.com/tutorials/advantages-and-disadvantages-of-machine-learning/}.
+  Acesso em: 23 nov. 2026.}
+
 \end{thebibliography}

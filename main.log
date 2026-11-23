@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.6.2)  25 OCT 2026 15:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.6.2)  23 NOV 2026 18:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1245,43 +1245,28 @@ been already used, duplicate ignored
 l.3 \cleardoublepage
                      [1
 
-]) (./partes/pre_textuais/lista_quadros.tex (./main.loq) [2
+]) (./partes/pre_textuais/lista_tabelas.tex (./main.lot) [2
 
-]) (./partes/pre_textuais/lista_siglas.tex [3
-
-
-])
-(./partes/pre_textuais/sumario.tex (./main.toc
-LaTeX Font Info:    Font shape `T1/phv/m/it' in size <12> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 12.
-) [4
+]) (./partes/pre_textuais/sumario.tex (./main.toc) [3
 
 ])
-(./partes/textuais/introducao.tex
+(./partes/textuais/aplicacaoatual.tex
 Cap\'{\i }tulo 1.
-) (./partes/textuais/historia_evolucao.tex [5
+[4
 
 
 ]
 Cap\'{\i }tulo 2.
-) (./partes/textuais/paradigmas.tex [6
+[5
 
-]
+] [6]
 Cap\'{\i }tulo 3.
-) (./partes/textuais/sistemas_conhecimento.tex [7
+[7
 
-]
+] [8]
 Cap\'{\i }tulo 4.
-) (./partes/textuais/resolucao_problemas.tex [8
-
-]
-Cap\'{\i }tulo 5.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 11.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 11.
-LaTeX Font Info:    Trying to load font information for TS1+phv on input line 2
-2.
+LaTeX Font Info:    Trying to load font information for TS1+phv on input line 7
+1.
 (c:/texlive/2026/texmf-dist/tex/latex/psnfss/ts1phv.fd
 File: ts1phv.fd 2020/03/25 scalable font definitions for TS1/phv.
 )
@@ -1289,24 +1274,43 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `phv' (encoding: TS1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
+<images/iabenfef.png, id=126, 426.7215pt x 341.3115pt>
+File: images/iabenfef.png Graphic file (type png)
+<use images/iabenfef.png>
+Package pdftex.def Info: images/iabenfef.png  used on input line 85.
+(pdftex.def)             Requested size: 426.72046pt x 341.31065pt.
  [9
 
-]
-Overfull \hbox (5.00658pt too wide) in paragraph at lines 100--101
- [][] 
+] [10 <./images/iabenfef.png>]
+Cap\'{\i }tulo 5.
+LaTeX Font Info:    Font shape `T1/phv/b/it' in size <12> not available
+(Font)              Font shape `T1/phv/b/sl' tried instead on input line 99.
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <12> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 99.
+<images/vantagens.jpg, id=143, 426.84468pt x 223.58531pt>
+File: images/vantagens.jpg Graphic file (type jpg)
+<use images/vantagens.jpg>
+Package pdftex.def Info: images/vantagens.jpg  used on input line 108.
+(pdftex.def)             Requested size: 426.84364pt x 223.58475pt.
+[11
+
+] [12 <./images/vantagens.jpg>]
+Cap\'{\i }tulo 6.
+
+Underfull \hbox (badness 4859) in paragraph at lines 139--139
+[]|\T1/phv/m/n/12 (+20) Requalificação con-tí-
  []
 
-[10] [11] [12] [13] [14]) (./partes/textuais/aplicacaoatual.tex [15]
-Cap\'{\i }tulo 6.
-) (./partes/textuais/desafio_comparativo.tex [16
+
+Underfull \hbox (badness 5260) in paragraph at lines 141--141
+[]|\T1/phv/b/n/12 (+20) Ética e so-ci-e-
+ []
+
+[13
 
 ]
 Cap\'{\i }tulo 7.
-) (./partes/textuais/conclusao.tex [17
-
-]
-Cap\'{\i }tulo 8.
-) (./main.bbl [18
+) (./main.bbl [14
 
 ]
 
@@ -1314,23 +1318,20 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\uppercase' on input line 3.
 
 bibitemlist
-
-LaTeX Warning: Empty `thebibliography' environment on input line 8.
-
 )
 No file main.ind.
 
 Package caption Warning: Unused \captionsetup[grafico] on input line 203.
 See the caption package documentation for explanation.
 
-[19
+[15
 
 ]
 \tf@lof=\write6
 \openout6 = `main.lof'.
 
-\tf@loq=\write7
-\openout7 = `main.loq'.
+\tf@lot=\write7
+\openout7 = `main.lot'.
 
 \tf@toc=\write8
 \openout8 = `main.toc'.
@@ -1342,23 +1343,21 @@ L3 programming layer <2020/03/25>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 32180 strings out of 467166
- 594414 string characters out of 5413671
- 1162106 words of memory out of 5000000
- 60633 multiletter control sequences out of 15000+600000
- 669557 words of font info for 201 fonts, out of 8000000 for 9000
+ 31916 strings out of 467166
+ 588804 string characters out of 5413671
+ 1150250 words of memory out of 5000000
+ 60386 multiletter control sequences out of 15000+600000
+ 667876 words of font info for 210 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,13n,107p,1001b,829s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/tex
-live/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2026/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2026/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2026/texmf-dist/fonts/ty
-pe1/urw/helvetic/uhvb8a.pfb><c:/texlive/2026/texmf-dist/fonts/type1/urw/helveti
-c/uhvr8a.pfb><c:/texlive/2026/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on main.pdf (20 pages, 103431 bytes).
+ 99i,12n,107p,1001b,705s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/texlive/2026/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><c:/texlive/2
+026/texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb><c:/texlive/2026/texmf-dist
+/fonts/type1/urw/helvetic/uhvr8a.pfb><c:/texlive/2026/texmf-dist/fonts/type1/ur
+w/helvetic/uhvro8a.pfb>
+Output written on main.pdf (16 pages, 291743 bytes).
 PDF statistics:
- 277 PDF objects out of 1000 (max. 8388607)
- 238 compressed objects within 3 object streams
- 56 named destinations out of 1000 (max. 500000)
- 57549 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 281 PDF objects out of 1000 (max. 8388607)
+ 245 compressed objects within 3 object streams
+ 53 named destinations out of 1000 (max. 500000)
+ 47263 words of extra memory for PDF output out of 51595 (max. 10000000)
 
